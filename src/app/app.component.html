@@ -1,0 +1,38 @@
+
+ <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%" border="1px;">
+  <thead>
+    <tr class="thead-dark text-center">
+      
+     
+      <th (click)="sortTable1('mobId')" >Mobile Id</th>
+      <th (click)="sortTable('mobName')">Mobile Name</th>
+      <th (click)="sortTable2('mobPrice')">Mobile Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody class="text-center" *ngIf="mobileList?.length">
+    <ng-container *ngFor="
+        let m of mobileList ;
+        let i = index">
+      <tr>
+        <td>{{ m.mobId }}</td>
+        <td>{{ m.mobName }}</td>
+        <td>{{ m.mobPrice|currency:"$" }}</td>
+
+
+        <td>
+          <button id="button1" (click)="deleteRow(m)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table> 
+
+
+
+  
+
+
